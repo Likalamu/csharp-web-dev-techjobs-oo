@@ -33,13 +33,19 @@ namespace TechJobsTests
         public void TestJobConstructorSetsAllFields()
         {
             //arrange
-            Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job test_jobConstructor = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            //Job test_jobConstructor = new Job("Product tester", new Employer employerName, new Location employerLocation, new PositionType jobType, new CoreCompetency jobCoreCompetency);
 
             // act
-            string job3 = test_job.ToString();
-
+          
             //assert
-            Assert.AreSame(job3, Job);
+            Assert.AreEqual("Product tester", test_jobConstructor.Name);
+            Assert.AreEqual("ACME", test_jobConstructor.EmployerName.ToString());
+            Assert.AreEqual("Desert", test_jobConstructor.EmployerLocation.ToString());
+            Assert.AreEqual("Quality control", test_jobConstructor.JobType.ToString());
+            Assert.AreEqual("Persistence", test_jobConstructor.JobCoreCompetency.ToString());
+            Assert.AreEqual(1, test_jobConstructor.Id);
         }
 
         //[TestMethod]
