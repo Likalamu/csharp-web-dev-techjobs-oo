@@ -18,7 +18,7 @@ namespace TechJobsTests
         {
             // arrange
             int job1Id = 1;
-            int job2Id = 2;
+            int job2Id = 3;
 
             Job test_job = new Job();
 
@@ -26,16 +26,15 @@ namespace TechJobsTests
             int ID = test_job.Id;
 
             // assert
-            Assert.AreEqual(job1Id, job2Id, 1);
+            Assert.IsTrue(job1Id != job2Id);
         }
+
 
         [TestMethod]
         public void TestJobConstructorSetsAllFields()
         {
             //arrange
             Job test_jobConstructor = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
-            //Job test_jobConstructor = new Job("Product tester", new Employer employerName, new Location employerLocation, new PositionType jobType, new CoreCompetency jobCoreCompetency);
 
             // act
           
@@ -48,16 +47,25 @@ namespace TechJobsTests
             Assert.AreEqual(1, test_jobConstructor.Id);
         }
 
-        //[TestMethod]
-        //public void TestJobsForEquality()
-        //{
-        //   //Assert.AreEqual(test_job, 1);
-        //}
 
-        //[TestMethod]
-        //public void TestToString()
-        //{
-        //    //Assert.AreEqual(test_job, 1);
-        //}
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+           
+            Job test1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job test2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.IsFalse(test1.Equals(test2));
+        }
+
+        [TestMethod]
+        public void TestToString()
+        {
+            Job test1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            string testString = test1.ToString();
+            char firstCharacter = testString[0];
+            char lastCharacter = testString[testString.Length - 1];
+            Assert.IsTrue(firstCharacter == lastCharacter);
+        }
     }
 }
