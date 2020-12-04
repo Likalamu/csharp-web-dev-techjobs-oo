@@ -49,7 +49,7 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            return "\n" + "ID: " + this.Id + "\n" + "Name: " + this.Name + "\n" + "Employer Name: " + EmployerName
+            return "\n" + "ID: " + Id + "\n" + "Name: " + Name + "\n" + "Employer Name: " + EmployerName
                 + "\n" + "Employer Location: " + EmployerLocation + "\n" + "Job Type: " + JobType
                 + "\n" + "Job Competency: " + JobCoreCompetency + "\n";
         }

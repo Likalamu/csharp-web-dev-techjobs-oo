@@ -6,13 +6,6 @@ namespace TechJobsTests
     [TestClass]
     public class JobTests
     {
-        //[TestInitialize]
-        //public void CreateJobObject()
-        //{
-        //    Job test_job = new Job();
-        //    Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        //}
-
         [TestMethod]
         public void TestSettingJobId()
         {

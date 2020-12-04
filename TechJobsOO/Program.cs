@@ -19,7 +19,7 @@ namespace TechJobsOO
             jobs.Add(job3);
 
             foreach (Job job in jobs)
-            {
+            { 
                 Console.WriteLine(job);
                 //Console.WriteLine(job.EmployerName);
             }
